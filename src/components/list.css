@@ -1,0 +1,7 @@
+.list{
+    width: 500px;
+    background-color: white;
+    box-shadow: 1px 5px 5px rgb(131, 125, 125);
+    padding: 30px;
+    margin-top: 50px;
+}
