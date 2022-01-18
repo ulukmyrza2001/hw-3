@@ -11,9 +11,11 @@ const Inputform = () => {
 	})
 	const addDataHandler = (e) => {
 		const name = e.target.name
-		setTask({
-			...task,
-			[name]: e.target.value,
+		setTask((prevState) => {
+			return {
+				...prevState,
+				[name]: e.target.value,
+			}
 		})
 	}
 	const onAddHandler = (e) => {
