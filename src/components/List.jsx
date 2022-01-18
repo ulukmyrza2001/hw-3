@@ -1,8 +1,8 @@
 import React from 'react'
-
+import './list.css'
 const List = (props) => {
     return (
-        <div>
+        <div className='list'>
            <ul>
 				{props.data.map((el, id) => {
 					return (

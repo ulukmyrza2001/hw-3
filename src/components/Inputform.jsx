@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import List from './List'
+import './ImputForm.css'
 
 const Inputform = () => {
 	const [tasks, setTasks] = useState([])
@@ -8,7 +9,7 @@ const Inputform = () => {
 		lname: '',
 		email: '',
 	})
-	const AddTaskHandler = (e) => {
+	const addDataHandler = (e) => {
 		const name = e.target.name
 		setTask({
 			...task,
@@ -17,50 +18,53 @@ const Inputform = () => {
 	}
 	const onAddHandler = (e) => {
 		e.preventDefault()
-		// const newTask = task;
 		setTasks([...tasks, task])
 	}
-	console.log(tasks)
 
 	return (
 		<div>
-			<form onSubmit={onAddHandler}>
-				<div>
-					<label>First name</label>
-					<input
-						name='fname'
-						type='text'
-						className='fname'
-						onChange={AddTaskHandler}
-						value={task.fname}
-					/>
-				</div>
-				<div>
-					<label>Last name</label>
-					<input
-						name='lname'
-						type='text'
-						className='lname'
-						onChange={AddTaskHandler}
-						value={task.lname}
-					/>
-				</div>
-				<div>
-					<label htmlFor=''>Email</label>
-					<input
-						name='email'
-						type='text'
-						className='email'
-						onChange={AddTaskHandler}
-						value={task.email}
-					/>
-				</div>
-
-				<button type='submit' className='add'>
-					Add
-				</button>
-			</form>
-            <List data = {tasks}/>
+			<div className='center'>
+				<form onSubmit={onAddHandler}>
+					<h1>Our Newsletter</h1>
+					<div className='inputbox'>
+						<input
+							name='fname'
+							type='text'
+							className='fname'
+							required='required'
+							onChange={addDataHandler}
+							value={task.fname}
+						/>
+						<span>First name</span>
+					</div>
+					<div className='inputbox'>
+						<input
+							name='lname'
+							type='text'
+							className='lname'
+							required='required'
+							onChange={addDataHandler}
+							value={task.lname}
+						/>
+						<span>Last name</span>
+					</div>
+					<div className='inputbox'>
+						<input
+							name='email'
+							type='text'
+							className='email'
+							required='required'
+							onChange={addDataHandler}
+							value={task.email}
+						/>
+						<span>Email</span>
+					</div>
+					<div className='inputbox'>
+						<input type='submit' value='submit' />
+					</div>
+				</form>
+			</div>
+			<List data={tasks} />
 		</div>
 	)
 }

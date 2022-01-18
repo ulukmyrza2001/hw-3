@@ -1,0 +1,13 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.list{
+    width: 500px;
+    padding: 20px;
+    background-color: white;
+    margin-top: 20px;
+    overflow: hidden;
+    text-align: center;
+}
